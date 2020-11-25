@@ -1,0 +1,21 @@
+<%- include("partials/header") -%>
+<form  action="/compose" method="post">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" type="text" name="title" value="">
+    <label for="post-content">post</label>
+    <textarea class="form-control" name="content" rows="5" cols="30"></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">PUBLISH</button>
+</form>
+
+<div class="post-content">
+
+  <% for(var i=0;i<posts.length;i++){ %>
+  <h1>  <%= posts[i].title %></h1>
+  <div class="content">
+    <%= posts[i].content %>
+  </div>
+  <% } %>
+</div>
+<%- include("partials/footer") -%>
